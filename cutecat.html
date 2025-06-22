@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bạn có yêu tôiii khôngggg</title>
+  <style>
+    body {
+      background-color: #fbeaea;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .cute-img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .btn {
+      padding: 12px 24px;
+      margin: 10px 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .yes {
+      background-color: #ff8fab;
+      color: white;
+    }
+    .no {
+      background-color: #a0c4ff;
+      color: white;
+    }
+    .grow-1 {
+      transform: scale(2);
+      margin: 20px 20px;
+    }
+    .grow-2 {
+      transform: scale(2);
+      margin: 30px 30px;
+    }
+    .grow-3 {
+      transform: scale(2.5);
+      margin: 40px 40px;
+    }
+    .grow-4 {
+      transform: scale(3);
+      margin: 50px 50px;
+    }
+    .grow-5 {
+      transform: scale(3.5);
+      margin: 60px 60px;
+    }
+    .grow-6 {
+      transform: scale(4);
+      margin: 70px 70px;
+    }
+    .grow-7 {
+      transform: scale(4.5);
+      margin: 80px 80px;
+    }
+    .grow-8 {
+      transform: scale(5);
+      margin: 90px 90px;
+    }
+    .grow-9 {
+      transform: scale(5.5);
+      margin: 100px 100px;
+    }
+    .grow-10 {
+      transform: scale(6);
+      margin: 110px 110px;
+    }
+    .hidden {
+      display: none;
+    }
+    .final-message {
+      font-size: 26px;
+      color: #8d4d71;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hug-img {
+      width: 180px;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div id="main-content">
+    <img src="cutecat1.png" alt="cute" class="cute-img" />
+    <div class="question">Bạn có yêu tôiii khôngggg</div>
+    <div>
+        <button class="btn yes" id="yesBtn" onclick="handleYesClick()">Có</button>
+        <button class="btn no" id="noBtn" onclick="handleNoClick()">Không</button>
+    </div>
+  </div>
+
+  <div id="final-content" class="hidden">
+    <div class="final-message">Tôi biết sẽ như vậy mà ( >﹏<)♡∞</div>
+    <img src="cutecat2.png" alt="hug" class="hug-img" />
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const mainContent = document.getElementById("main-content");
+    const finalContent = document.getElementById("final-content");
+    let noClickCount = 0;
+
+    function handleNoClick() {
+      noClickCount++;
+
+      if (noClickCount === 1) {
+        noBtn.innerText = "Bạn nghiêm túc chứ...";
+        yesBtn.classList.add("grow-1");
+      } else if (noClickCount === 2) {
+        noBtn.innerText = "Nghĩ lại đi mà?";
+        yesBtn.classList.remove("grow-1");
+        yesBtn.classList.add("grow-2");
+      } else if (noClickCount === 3) {
+        noBtn.innerText = "Không được chọn cái này!";
+        yesBtn.classList.remove("grow-2");
+        yesBtn.classList.add("grow-3");
+      } else if (noClickCount === 4) {
+        noBtn.innerText = "Mình sẽ buồn lắm đó...";
+        yesBtn.classList.remove("grow-3");
+        yesBtn.classList.add("grow-4");
+      } else if (noClickCount === 5) {
+        yesBtn.classList.remove("grow-4");
+        yesBtn.classList.add("grow-5");
+        noBtn.innerText = "Không được đâu :(";
+      } else if (noClickCount === 6) {
+        yesBtn.classList.remove("grow-5");
+        yesBtn.classList.add("grow-6");
+      } else if (noClickCount === 7) {
+        yesBtn.classList.remove("grow-6");
+        yesBtn.classList.add("grow-7");
+      } else if (noClickCount === 8) {
+        yesBtn.classList.remove("grow-7");
+        yesBtn.classList.add("grow-8");
+      } else if (noClickCount === 9) {
+        yesBtn.classList.remove("grow-8");
+        yesBtn.classList.add("grow-9");
+      } else if (noClickCount === 10) {
+        yesBtn.classList.remove("grow-9");
+        yesBtn.classList.add("grow-10");
+      } else if (noClickCount > 10) {
+        noBtn.classList.add("hidden"); // biến mất luôn
+      }
+    }
+
+    function handleYesClick() {
+      mainContent.classList.add("hidden");
+      finalContent.classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
